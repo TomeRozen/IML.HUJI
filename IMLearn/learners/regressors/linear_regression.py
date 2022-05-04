@@ -51,7 +51,6 @@ class LinearRegression(BaseEstimator):
         if self.include_intercept_:
             X = np.hstack((np.ones((X.shape[0], 1)), X))
         self.coefs = pinv(X)@y
-        #TODO: check for correctness. should ones be at start?
 
     def _predict(self, X: np.ndarray) -> np.ndarray:
         """
